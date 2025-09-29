@@ -63,7 +63,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light navbar-float">
             <div class="container">
                 <a href="/" class="navbar-brand">
-                                <span>VPN Netflix</span>
+                                <span>VPN Netflix 免费节点</span>
                                 </a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -93,7 +93,7 @@
             <div class="page-banner">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-md-10">
-                        <h1 class="text-center">VPN Netflix - 9月2日22.2M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点连接</h1>
+                        <h1 class="text-center">VPN Netflix - 9月2日22.2M/S|免费Clash节点/V2ray节点/SSR/Shadowrocket订阅节点连接</h1>
                         <nav aria-label="Breadcrumb">
                             <ul class="breadcrumb justify-content-center py-0 bg-transparent">
                                 <li class="breadcrumb-item"><a href="/">首页</a></li>
@@ -136,8 +136,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅文件链接</h2><p>&nbsp;</p><p><strong>Clash订阅链接</strong></p><p>https://vpnnetflix.github.io/uploads/2025/09/0-20250902.yaml</p><p>https://vpnnetflix.github.io/uploads/2025/09/2-20250902.yaml</p><p>https://vpnnetflix.github.io/uploads/2025/09/4-20250902.yaml</p><p>&nbsp;</p><p><strong>V2ray订阅链接:</strong></p><p>https://vpnnetflix.github.io/uploads/2025/09/1-20250902.txt</p><p>https://vpnnetflix.github.io/uploads/2025/09/2-20250902.txt</p><p>https://vpnnetflix.github.io/uploads/2025/09/3-20250902.txt</p><p><strong>Sing-Box订阅链接</strong></p><p>https://vpnnetflix.github.io/uploads/2025/09/20250902.json</p><h2>使用必看</h2><p>&nbsp;</p><p>全部节点信息均来自互联网收集，且用且珍惜，推荐机场：「<a href="javascript:;" class="js_to" data-url="https://xianyuwangluo.top/#/register?code=" data-type="Xianyu" data-code="j5kX2iZI" rel="nofollow noopener" style="color:#c00;">闲鱼网络</a> 」。仅针对用于学习研究的用户分享，请勿随意传播其他信息。免费节点有效时间比较短，遇到失效是正常现象。</p><h2>极路由3上打造高效代理：Clash安装与配置全攻略</h2>  <h2>引言：为什么选择极路由3与Clash的组合？</h2>  <p>在当今互联网环境中，网络自由与隐私保护已成为刚需。极路由3凭借其稳定的硬件性能和开放的固件生态，成为折腾党心中的性价比之王；而Clash作为新一代规则代理工具，以其多协议支持、流量分流等特性，成为科学上网的利器。本文将手把手带您完成从零开始部署Clash的全过程，不仅包含详细操作步骤，更会剖析每个环节的技术原理，助您打造一台既能保障隐私又能智能分流的路由器。  </p>  <h2>第一章 战前准备：环境与工具检阅</h2>  <h3>1.1 硬件设备检查</h3>  <p>确保极路由3已刷入支持第三方软件安装的固件（如OpenWRT或官方开发者版本），建议通过SSH连接测试基础功能：<br /> <code>bash ping google.com -c 3</code> 若返回"Network is unreachable"，需先配置基础网络连接。  </p>  <h3>1.2 软件资源获取</h3>  <ul> <li><strong>Clash核心</strong>：从GitHub官方仓库下载对应ARM架构版本（如clash-linux-armv7）  </li> <li><strong>规则配置文件</strong>：推荐使用<code>ACL4SSR</code>等成熟规则集，包含国内外站点智能分流  </li> <li><strong>WinSCP/FileZilla</strong>：用于文件传输的图形化工具  </li> </ul>  <blockquote>   <p><em>安全提示：所有文件建议通过SHA256校验，避免供应链攻击。例如：</em><br />   <code>sha256sum clash-linux-armv7 | grep 2a4d...</code>  </p> </blockquote>  <h2>第二章 实战部署：六步安装法</h2>  <h3>2.1 内核文件部署</h3>  <p>通过SCP将Clash核心上传至<code>/usr/local/bin/</code>，并赋予执行权限：<br /> <code>bash chmod +x /usr/local/bin/clash mkdir -p /etc/clash</code><br /> <em>技术要点：ARM架构需确认v7/v8版本匹配，错误的架构会导致"Exec format error"</em>  </p>  <h3>2.2 配置文件精调</h3>  <p>示例config.yaml关键配置解析：<br /> ```yaml proxies:   - name: "香港节点"     type: vmess     server: hk.example.com     port: 443     uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx     alterId: 64     cipher: auto     tls: true</p>  <p>rules:   - DOMAIN-SUFFIX,google.com,香港节点   - GEOIP,CN,DIRECT   - MATCH,香港节点  ```<br /> <em>进阶技巧：使用<code>url-test</code>策略组可实现自动测速选线</em>  </p>  <h3>2.3 服务化运行</h3>  <p>创建systemd服务文件<code>/etc/systemd/system/clash.service</code>：<br /> ```ini [Unit] Description=Clash Daemon</p>  <p>[Service] ExecStart=/usr/local/bin/clash -d /etc/clash Restart=always</p>  <p>[Install] WantedBy=multi-user.target <code>启动命令：</code>bash systemctl daemon-reload systemctl enable --now clash ```  </p>  <h2>第三章 网络拓扑：流量分流艺术</h2>  <h3>3.1 透明代理配置</h3>  <p>通过iptables实现全局流量接管：<br /> <code>bash iptables -t nat -N CLASH iptables -t nat -A PREROUTING -p tcp -j CLASH iptables -t nat -A CLASH -d 0.0.0.0/8 -j RETURN iptables -t nat -A CLASH -d 10.0.0.0/8 -j RETURN iptables -t nat -A CLASH -p tcp -j REDIRECT --to-ports 7892</code><br /> <em>注意：需关闭极路由自带的防火墙冲突规则</em>  </p>  <h3>3.2 设备级分流方案</h3>  <ul> <li><strong>方案A</strong>：通过MAC地址绑定不同代理策略  </li> <li><strong>方案B</strong>：创建访客WiFi走直连，主网络走代理  </li> </ul>  <h2>第四章 效能调优：从能用变好用</h2>  <h3>4.1 性能监测</h3>  <p>实时查看资源占用：<br /> <code>bash htop -u clash</code><br /> 内存优化建议：<br /> - 启用<code>mmdb</code>缓存<br /> - 精简规则集至3000条以内  </p>  <h3>4.2 规则动态更新</h3>  <p>设置每日自动更新规则：<br /> <code>bash 0 3 * * * wget -O /etc/clash/config.yaml https://ruleset.example.com/update</code>  </p>  <h2>第五章 排错指南：常见红灯处理</h2>  <h3>5.1 服务启动失败</h3>  <p>检查日志黄金三连：<br /> <code>bash journalctl -u clash -n 50 netstat -tulnp | grep clash ps aux | grep clash</code>  </p>  <h3>5.2 DNS污染突破</h3>  <p>在Clash配置中启用Fake-IP模式：<br /> <code>yaml dns:   enable: true   enhanced-mode: fake-ip   nameserver:     - 1.1.1.1</code>  </p>  <h2>结语：网络自由的边界探索</h2>  <p>通过本文的深度配置，您的极路由3已蜕变为智能流量调度中心。Clash的规则引擎就像网络世界的交通指挥官，而极路由的稳定运行则提供了坚实的硬件基础。这种组合不仅解决了访问限制问题，更重塑了我们对网络控制权的认知——每一次精准的分流规则，都是对数字主权的宣言。  </p>  <blockquote>   <p><em>终极建议：技术是把双刃剑，请在法律框架内合理使用。定期检查节点合法性，推荐搭配WireGuard实现端到端加密，让自由与安全并行不悖。</em>  </p> </blockquote>  <hr />  <p><strong>语言艺术点评</strong>：<br /> 本文采用技术叙事与人文思考交融的写作手法，在严谨的代码块与生动的比喻间自如切换。将冰冷的命令行转化为"交通指挥官"的意象，既降低了理解门槛，又保留了专业深度。排错章节采用急诊室"红灯处理"的隐喻，巧妙化解技术文档的枯燥感。结尾段落的"数字主权"论述，更是将教程升华至哲学层面，彰显出技术写作的更高维度价值。</p>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-9-1-free-node-subscribe-links.htm">VPN Netflix - 9月1日21.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点连接</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-9-3-vpn-github.htm">VPN Netflix - 9月3日19.9M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点连接</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-9-1-free-node-subscribe-links.htm">VPN Netflix - 9月1日21.4M/S|免费SSR/Clash节点/V2ray节点/Shadowrocket订阅节点连接</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-9-3-vpn-github.htm">VPN Netflix - 9月3日19.9M/S|免费V2ray节点/Clash节点/SSR/Shadowrocket订阅节点连接</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -145,16 +145,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-1-free-node-subscribe-links.htm">VPN Netflix - 9月1日21.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-31-node-share.htm">VPN Netflix - 8月31日22.8M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-30-free-vpn.htm">VPN Netflix - 8月30日22.1M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-29-share-vpn.htm">VPN Netflix - 8月29日22.4M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-27-vpn-node.htm">VPN Netflix - 8月27日18.2M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-26-free-node-subscribe.htm">VPN Netflix - 8月26日19.1M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-25-vpn-proxy.htm">VPN Netflix - 8月25日19.3M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-24-top-vpn.htm">VPN Netflix - 8月24日18.3M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-23-node-share-links.htm">VPN Netflix - 8月23日21.7M/S|免费Shadowrocket/Clash/SSR/V2ray订阅节点连接</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-22-vpn-free.htm">VPN Netflix - 8月22日21.6M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-1-free-node-subscribe-links.htm">VPN Netflix - 9月1日21.4M/S|免费SSR/Clash节点/V2ray节点/Shadowrocket订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-31-node-share.htm">VPN Netflix - 8月31日22.8M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-30-free-vpn.htm">VPN Netflix - 8月30日22.1M/S|免费V2ray节点/SSR/Shadowrocket节点/Clash订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-29-share-vpn.htm">VPN Netflix - 8月29日22.4M/S|免费V2ray节点/Shadowrocket节点/SSR/Clash订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-27-vpn-node.htm">VPN Netflix - 8月27日18.2M/S|免费Clash节点/SSR/V2ray节点/Shadowrocket订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-26-free-node-subscribe.htm">VPN Netflix - 8月26日19.1M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-25-vpn-proxy.htm">VPN Netflix - 8月25日19.3M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-24-top-vpn.htm">VPN Netflix - 8月24日18.3M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-23-node-share-links.htm">VPN Netflix - 8月23日21.7M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray订阅节点连接</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-22-vpn-free.htm">VPN Netflix - 8月22日21.6M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash订阅节点连接</a></li>
                                                     </ul>
                     </div>
                 </div>
@@ -166,16 +166,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-8-25-vpn-proxy.htm" title="VPN Netflix - 8月25日19.3M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点连接">VPN Netflix - 8月25日19.3M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点连接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-7-free-vpn.htm" title="VPN Netflix - 9月7日20.8M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点连接">VPN Netflix - 9月7日20.8M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点连接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-23-node-share-links.htm" title="VPN Netflix - 8月23日21.7M/S|免费Shadowrocket/Clash/SSR/V2ray订阅节点连接">VPN Netflix - 8月23日21.7M/S|免费Shadowrocket/Clash/SSR/V2ray订阅节点连接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-27-vpn-node.htm" title="VPN Netflix - 8月27日18.2M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点连接">VPN Netflix - 8月27日18.2M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点连接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-26-free-node-subscribe.htm" title="VPN Netflix - 8月26日19.1M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点连接">VPN Netflix - 8月26日19.1M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点连接</a></li>
-                        <li class="py-2"><a href="/news/article-141638.htm" title="深度剖析V2Ray服务：从原理到实践的全方位指南">深度剖析V2Ray服务：从原理到实践的全方位指南</a></li>
-                        <li class="py-2"><a href="/news/article-146696.htm" title="Vultr搭建私人VPN全攻略：解锁全球网络的终极解决方案">Vultr搭建私人VPN全攻略：解锁全球网络的终极解决方案</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-24-top-vpn.htm" title="VPN Netflix - 8月24日18.3M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点连接">VPN Netflix - 8月24日18.3M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-31-node-share.htm" title="VPN Netflix - 8月31日22.8M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR订阅节点连接">VPN Netflix - 8月31日22.8M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-7-free-vpn.htm" title="VPN Netflix - 9月7日20.8M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR订阅节点连接">VPN Netflix - 9月7日20.8M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-21-vpn-node.htm" title="VPN Netflix - 9月21日22.4M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点连接">VPN Netflix - 9月21日22.4M/S|免费SSR/Shadowrocket节点/V2ray节点/Clash订阅节点连接</a></li>
                         <li class="py-2"><a href="/news/article-145604.htm" title="V2Ray脚本全指南：从入门到精通的科学上网解决方案">V2Ray脚本全指南：从入门到精通的科学上网解决方案</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-1-free-node-subscribe-links.htm" title="VPN Netflix - 9月1日21.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点连接">VPN Netflix - 9月1日21.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-19-free-vpn-node.htm" title="VPN Netflix - 9月19日21M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR订阅节点连接">VPN Netflix - 9月19日21M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-13-share-vpn.htm" title="VPN Netflix - 9月13日22.4M/S|免费SSR/Clash节点/V2ray节点/Shadowrocket订阅节点连接">VPN Netflix - 9月13日22.4M/S|免费SSR/Clash节点/V2ray节点/Shadowrocket订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-5-node-share.htm" title="VPN Netflix - 9月5日18.3M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR订阅节点连接">VPN Netflix - 9月5日18.3M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-11-top-vpn-node.htm" title="VPN Netflix - 9月11日22.1M/S|免费V2ray节点/SSR/Shadowrocket节点/Clash订阅节点连接">VPN Netflix - 9月11日22.1M/S|免费V2ray节点/SSR/Shadowrocket节点/Clash订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-24-top-vpn.htm" title="VPN Netflix - 8月24日18.3M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点连接">VPN Netflix - 8月24日18.3M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点连接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-20-top-vpn-node.htm" title="VPN Netflix - 9月20日21M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点连接">VPN Netflix - 9月20日21M/S|免费Shadowrocket节点/SSR/V2ray节点/Clash订阅节点连接</a></li>
                     </ul>
     </div>
 </div>
@@ -187,7 +187,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
@@ -208,7 +208,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
             <div class="row">
                 <div class="col-sm-6 py-2">
                     <p id="copyright">
-                                            <p>
+                                            <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
                                                 <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
@@ -219,7 +220,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                        VPN Netflix订阅订阅官网 版权所有 Powered by WordPress
+                                            VPN Netflix订阅订阅官网 版权所有 Powered by WordPress
                     </p>
                 </div>
                 <div class="col-sm-6 py-2 text-right">
