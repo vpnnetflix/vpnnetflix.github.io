@@ -369,17 +369,23 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/mianfei-vpn-2026-10-25.htm">VPN Netflix - 10月25日21.4M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点连接</a></p>
+        <p>下一个：<a href="/free-nodes/share-vpn-2026-10-27.htm">VPN Netflix - 10月27日21.1M/S|免费Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点订阅节点连接</a></p>
     </div>
 <h4>FAQ</h4>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
+    <div class="panel-body">
+        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash Premium 与普通版本有什么区别？</h5></div>
+    <div class="panel-body">
+        Clash Premium 是增强版，支持更多功能如 TUN 模式、本地 DNS 解析、脚本规则和自定义代理链。它能实现更细致的流量控制和兼容更多协议，适合对网络有高级需求的用户使用。<hr />    </div>
+</div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 使用透明代理时如何避免 DNS 泄露？</h5></div>
     <div class="panel-body">
         在 Mellow 中启用 fake-ip 或内置 DNS 解析功能，并将上游 DNS 指定为 DoH/DoT 服务，确保所有 DNS 请求通过代理转发而非本地解析，从而避免 ISP 或本地网络捕获实际访问域名。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
-    <div class="panel-body">
-        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
@@ -387,9 +393,14 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
         策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 支持哪些传输方式？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
     <div class="panel-body">
-        Matsuri 支持 TCP、gRPC、QUIC、WebSocket 等多种传输协议。用户可在配置文件中自由切换，根据服务器支持情况选择最优连接方式，以获得更低延迟与更强稳定性。<hr />    </div>
+        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
+    <div class="panel-body">
+        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 节点分组功能有什么优势？</h5></div>
@@ -397,9 +408,9 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
         分组管理可按延迟、地区或用途分类节点，并结合策略组实现自动分流。用户可快速选择最优节点，提高访问速度和稳定性，方便管理大量节点并优化维护效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 支持哪些传输方式？</h5></div>
     <div class="panel-body">
-        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
+        Matsuri 支持 TCP、gRPC、QUIC、WebSocket 等多种传输协议。用户可在配置文件中自由切换，根据服务器支持情况选择最优连接方式，以获得更低延迟与更强稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 是否支持订阅自动更新？</h5></div>
@@ -409,17 +420,7 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
     <div class="panel-body">
-        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash Premium 与普通版本有什么区别？</h5></div>
-    <div class="panel-body">
-        Clash Premium 是增强版，支持更多功能如 TUN 模式、本地 DNS 解析、脚本规则和自定义代理链。它能实现更细致的流量控制和兼容更多协议，适合对网络有高级需求的用户使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
-    <div class="panel-body">
-        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。    </div>
+        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -467,16 +468,16 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-10-16-free-vpn-node.htm" title="VPN Netflix - 10月16日20.6M/S|免费Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点订阅节点连接">VPN Netflix - 10月16日20.6M/S|免费Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-node-subscribe.htm" title="VPN Netflix - 9月10日19.8M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点订阅节点连接">VPN Netflix - 9月10日19.8M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-9-15.htm" title="VPN Netflix - 9月15日20M/S|免费Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点连接">VPN Netflix - 9月15日20M/S|免费Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-vpn-node.htm" title="VPN Netflix - 9月26日20.3M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点订阅节点连接">VPN Netflix - 9月26日20.3M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-10-7.htm" title="VPN Netflix - 10月7日21.2M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点订阅节点连接">VPN Netflix - 10月7日21.2M/S|免费Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-2-vpn-node.htm" title="VPN Netflix - 9月2日21.1M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点连接">VPN Netflix - 9月2日21.1M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-18-node-share.htm" title="VPN Netflix - 10月18日21.6M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点连接">VPN Netflix - 10月18日21.6M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-6-vpn-proxy.htm" title="VPN Netflix - 10月6日19.5M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点订阅节点连接">VPN Netflix - 10月6日19.5M/S|免费V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-1.htm" title="VPN Netflix - 10月1日21M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点连接">VPN Netflix - 10月1日21M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点连接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-10-19.htm" title="VPN Netflix - 10月19日18.1M/S|免费Singbox节点/Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点连接">VPN Netflix - 10月19日18.1M/S|免费Singbox节点/Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-top-vpn-node.htm" title="VPN Netflix - 10月10日19.2M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅节点连接">VPN Netflix - 10月10日19.2M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-2-vpn-proxy.htm" title="VPN Netflix - 11月2日19.9M/S|免费SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点订阅节点连接">VPN Netflix - 11月2日19.9M/S|免费SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-9-5.htm" title="VPN Netflix - 9月5日20.8M/S|免费V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点连接">VPN Netflix - 9月5日20.8M/S|免费V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-13.htm" title="VPN Netflix - 10月13日18.7M/S|免费Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点连接">VPN Netflix - 10月13日18.7M/S|免费Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="VPN Netflix - 9月13日19.4M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点连接">VPN Netflix - 9月13日19.4M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-5.htm" title="VPN Netflix - 10月5日19.1M/S|免费Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点订阅节点连接">VPN Netflix - 10月5日19.1M/S|免费Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-14-top-vpn-node.htm" title="VPN Netflix - 10月14日22.3M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点连接">VPN Netflix - 10月14日22.3M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-9-23.htm" title="VPN Netflix - 9月23日19.3M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点连接">VPN Netflix - 9月23日19.3M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-30-node-share.htm" title="VPN Netflix - 9月30日21.8M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点连接">VPN Netflix - 9月30日21.8M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点连接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-30-free-vpn-node.htm" title="VPN Netflix - 10月30日18.2M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点连接">VPN Netflix - 10月30日18.2M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点订阅节点连接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -488,7 +489,10 @@ Cloudflare全球节点加速，实现更低延迟和更快速的访问速度。<
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
